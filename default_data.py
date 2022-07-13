@@ -1,7 +1,6 @@
-# fiddler抓包后找到/api/appointment/pub_add/路径上的POST请求
 # header改成自己抓包得到的请求中的header
-# header少了某一项服务器会报200 我也不知道是哪一项引起的 所以干脆全写上去了（
-header = {
+# 预约时使用的请求头
+apply_header = {
     "unionid": "oF-BrwC3vYqPMqzW7ipvwBqr35As",
     'Host': "appointment-backend-cdn.dataesb.com",
     'Connection': "keep-alive",
@@ -19,8 +18,23 @@ header = {
     'Referer': "https://appointment-users.dataesb.com/",
     'Accept-Encoding': "gzip, deflate"
 }
-# 图书馆ID 宜春市图书馆是114
-subLibId = "114"
+
+# 获取预约时间表时使用的请求头
+get_schedule_header = {
+    'Host': "appointment-backend-cdn.dataesb.com",
+    'Connection': "keep-alive",
+    'Accept': "application/json, text/plain, */*",
+    'Origin': "https://appointment-users.dataesb.com",
+    'unionid': "oF-BrwC3vYqPMqzW7ipvwBqr35As",
+    'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6307001e)",
+    'Sec-Fetch-Site': "same-site",
+    'Sec-Fetch-Mode': "cors",
+    'Sec-Fetch-Dest': "empty",
+    'Referer': "https://appointment-users.dataesb.com/?code=081DYN0w3UxyQY2nXO1w3ndHu52DYN0n&state=login",
+    'Accept-Encoding': "gzip, deflate, br",
+    'Accept-Language': "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"
+}
+
 # 身份证号
 card = ""
 # 姓名
